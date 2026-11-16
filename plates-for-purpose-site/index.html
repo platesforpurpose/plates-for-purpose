@@ -88,6 +88,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 .dm:hover{opacity:.75}
 .cta.soon{color:var(--muted);border-bottom-style:dashed}
 .cta.soon:hover{color:var(--muted)}
+.ev{padding-block:26px 30px;border-bottom:1px solid var(--soft)}
+.ev-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px}
+.ev-head .k{font-family:var(--mono);font-size:.78rem;color:var(--muted);width:3rem}
+.ev-name{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.035em;line-height:1}
+.ev-note{font-size:1.5rem;transform:rotate(-4deg)}
+.ev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px;margin-top:26px;padding-left:calc(3rem + 20px)}
+.ev-grid>div{display:grid;gap:4px;align-content:start;border-top:1px solid var(--fg);padding-top:12px}
+.ev-lab{font-size:.75rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ev-big{font-size:clamp(2rem,4.4vw,3.2rem);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.ev-val{font-size:1.35rem;letter-spacing:-.02em;font-weight:400}
+.ev-sub{color:var(--muted);font-size:.98rem;line-height:1.45}
+.ev-link{color:var(--link);font-weight:400;font-size:.95rem;margin-top:6px;justify-self:start;border-bottom:1px solid currentColor}
+.ev-link:hover{opacity:.75}
+@media (max-width:760px){.ev-grid{grid-template-columns:1fr;padding-left:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -143,7 +157,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
   <div class="tag">( Events )</div>
   <div>
     <div class="rows">
-      <a class="row" href="https://www.instagram.com/platesforpurpose/" target="_blank" rel="noopener"><span class="k">Next</span><span class="t">Gerts event</span><span class="d">8:30 pm at Gerts, 3480 Rue McTavish, Montréal, QC H3A 1X9. Full details on our Instagram.</span><span class="a" aria-hidden="true">↗</span></a>
+      <div class="ev">
+        <div class="ev-head"><span class="k">Next</span><span class="ev-name">Night at Gerts</span><span class="hand ev-note">see you there!</span></div>
+        <div class="ev-grid">
+          <div><span class="ev-lab">When</span><span class="ev-big">8:30 pm</span></div>
+          <div><span class="ev-lab">Where</span><span class="ev-val">Gerts Bar</span><span class="ev-sub">3480 Rue McTavish<br>Montréal, QC H3A 1X9</span><a class="ev-link" href="https://www.google.com/maps/search/?api=1&amp;query=Gerts+3480+Rue+McTavish+Montreal+QC+H3A+1X9" target="_blank" rel="noopener">Open in Maps ↗</a></div>
+          <div><span class="ev-lab">Details</span><span class="ev-sub">Full details on our Instagram.</span><a class="ev-link" href="https://www.instagram.com/platesforpurpose/" target="_blank" rel="noopener">@platesforpurpose ↗</a></div>
+        </div>
+      </div>
     </div>
     <p class="note">More events announced on Instagram at <a class="ig" href="https://www.instagram.com/platesforpurpose/" target="_blank" rel="noopener">@platesforpurpose</a></p>
   </div>
