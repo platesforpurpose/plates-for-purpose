@@ -102,6 +102,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 .ev-link{color:var(--link);font-weight:400;font-size:.95rem;margin-top:6px;justify-self:start;border-bottom:1px solid currentColor}
 .ev-link:hover{opacity:.75}
 @media (max-width:760px){.ev-grid{grid-template-columns:1fr;padding-left:0}}
+.hero .wrap{position:relative}
+.sticker{position:absolute;right:max(28px,env(safe-area-inset-right,0px));top:clamp(70px,9vw,120px);width:clamp(170px,17vw,220px);aspect-ratio:1;border-radius:50%;background:var(--link);color:var(--bg);display:grid;place-content:center;justify-items:center;text-align:center;gap:2px;transform:rotate(9deg);box-shadow:0 14px 30px -14px color-mix(in srgb,var(--fg) 55%,transparent);animation:sway 4s ease-in-out infinite;transition:transform .2s}
+.sticker::before{content:"";position:absolute;inset:7px;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--bg) 70%,transparent)}
+.sticker:hover{animation-play-state:paused;transform:rotate(3deg) scale(1.05)}
+.sticker .mic{width:24px;height:auto;margin-bottom:4px}
+.st-1,.st-2{font-family:"Nothing You Could Do","Bradley Hand","Segoe Script",cursive;font-size:clamp(1.5rem,2.1vw,1.9rem);line-height:1}
+.st-3{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;margin-top:8px}
+@keyframes sway{0%,100%{transform:rotate(9deg)}50%{transform:rotate(4deg) translateY(-3px)}}
+@media (max-width:640px){.sticker{position:relative;right:auto;top:auto;width:138px;margin:-56px 6px 26px auto}.st-1,.st-2{font-size:1.3rem}.st-3{font-size:.62rem;margin-top:6px}.st-more{display:none}.sticker .mic{width:20px}}
+@media (prefers-reduced-motion:reduce){.sticker{animation:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -114,6 +124,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 
 <main id="top">
 <div class="hero"><div class="wrap">
+  <a class="sticker" href="#events" aria-label="Next event: Karaoke at Gerts, 8:30 pm. See details.">
+    <svg class="mic" viewBox="0 0 40 56" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="3" width="16" height="26" rx="8"/><path d="M14 11h6M14 17h6M14 23h6"/><path d="M6 23q0 14 14 14t14-14"/><path d="M20 37v10M12 51h16"/><path stroke-width="2" d="M34 6q4 2 3 6M38 2q6 4 4 11"/></svg>
+    <span class="st-1">karaoke</span>
+    <span class="st-2">at Gerts!</span>
+    <span class="st-3">8:30 pm<span class="st-more"> · see details</span> ↓</span>
+  </a>
   <h1>plates</h1>
   <h2 class="hand">for Purpose,</h2>
   <div class="meta">
